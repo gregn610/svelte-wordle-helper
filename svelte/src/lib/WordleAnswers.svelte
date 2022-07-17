@@ -32,7 +32,6 @@
     }
 
     const onChar = (value: string) => {
-        console.log('WordleAnswers.svelte:onChar(' + value + ')');
         $searchTermStore[$searchTermIndex] = value;
         if ($searchTermIndex < 4) {
             $searchTermIndex += 1;
@@ -41,12 +40,15 @@
     };
 
     const onDelete = () => {
-        console.log('WordleAnswers.svelte:onDelete()');
         $searchTermStore[$searchTermIndex] = '?';
         if ($searchTermIndex > 0) {
             $searchTermIndex -= 1;
         }
         refreshAnswers();
+    };
+
+    const onIndex = (idx) => {
+        $searchTermIndex = idx;
     };
 
 </script>
@@ -61,7 +63,7 @@
             <label for="wwo">Wordle answers only</label>
         </div>
 
-        <SearchGrid/>
+        <SearchGrid {onIndex}/>
 
         <Keyboard {onChar} {onDelete}></Keyboard>
 

@@ -8,7 +8,6 @@
 
     const onKeyDown = (e) => {
         const value = e.key.toUpperCase();
-        console.log('onKeyDown.value: ' + value);
         if (e.ctrlKey || e.metaKey) return;
         if (value === 'BACKSPACE' || value === 'DELETE') {
             onDelete();
