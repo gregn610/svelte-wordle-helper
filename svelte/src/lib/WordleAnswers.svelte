@@ -11,9 +11,9 @@
     let wordList = [];
 
     onMount(async function () {
-        const response = await fetch('static/wordle-all.json');
+        const response = await fetch('./wordle-all.json');
         complete = await response.json();
-        const response2 = await fetch('static/wordle-answers.json');
+        const response2 = await fetch('./wordle-answers.json');
         answers = await response2.json();
         refreshAnswers();
     });
