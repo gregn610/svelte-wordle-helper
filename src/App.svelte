@@ -1,14 +1,9 @@
 <script lang="ts">
-  import Counter from './lib/Counter.svelte'
+    import WordleAnswers from './lib/WordleAnswers.svelte'
 </script>
 
 <main>
-  <div class="card">
-    <Counter />
-  </div>
-
+    <div class="card">
+        <WordleAnswers/>
+    </div>
 </main>
-
-<style>
-
-</style>
